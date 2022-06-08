@@ -1,7 +1,7 @@
 [
-  {"name": "Bleistifte (pro Stck.)", "price": 1.50},
-  {"name": "Notizpapier (100 Seiten)", "price": 2.00},
-  {"name": "Kugelschreiber (pro Stck.)", "price": 3.00},
-  {"name": "Mäppchen (à 10 Stck.)", "price": 3.50 },
-  {"name": "Batterien AA  (4 Stck.)", "price": 7.00}
+  {"name": "Schokoladentafel (Lindt, 100g)", "price": 5.90},
+  {"name": "Espresso (aus Pandafreundlicher Anzpflanzung)", "price": 7.30},
+  {"name": "Buttergipfeli (pro Stück.)", "price": 1.70},
+  {"name": "Wasser ohne (1L)", "price": 5.50 },
+  {"name": "Wasser mit (1L)", "price": 5.50 }
 ]
