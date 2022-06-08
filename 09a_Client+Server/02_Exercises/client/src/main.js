@@ -1,7 +1,7 @@
 import Vue from 'vue'
 //Exercise 01
-//??
-//??
+import App from './App-01.vue'
+import store from './store/01_Exercise'
 
 //Import Bootstrap
 import { BootstrapVue } from 'bootstrap-vue'
