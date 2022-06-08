@@ -1,13 +1,5 @@
 import Vue from 'vue'
 
-//Demos_01 - Module marks
-// import App from './App-01.vue'
-// import store from './store/03_webshop-1'
-
-//Demos_02 - SWAP API (external API)
-// import App from './App-02.vue'
-// import store from './store/02_swapi'
-
 //Demos_03 - Mini webshop (only read products without storing checkout)
 import App from './App-03.vue'
 import store from './store/03_webshop-1'
