@@ -1,15 +1,16 @@
 import Vue from 'vue';
+import VueCompositionAPI from '@vue/composition-api'
+Vue.use(VueCompositionAPI);
+
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
+
+import router from './router'
+
 
 //Demos_03 - Mini webshop (only read products without storing checkout)
-import App from './App-03.vue'
-import store from './store/03_webshop-1'
-import VeeValidatePlugin from "./plugin/validation";
-import { createApp } from "vue";
-
-const app = createApp(App);
-app.use(VeeValidatePlugin);
-app.mount("#app");
-
+import App from './App-03'
+import store from "./store/03_webshop-1"
 
 //Import Bootstrap
 import { BootstrapVue } from 'bootstrap-vue'

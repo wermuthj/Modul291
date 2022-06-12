@@ -9,6 +9,8 @@
       <Cart />
       <div style="margin-top: 2rem"/>
       <Checkout />
+      <div style="margin-top: 2rem"/>
+      <Validate />
     </b-container>
   </div>
 </template>
@@ -16,11 +18,12 @@
 import Products from './components/Products.vue'
 import Cart from './components/Cart.vue'
 import Checkout from './components/Checkout.vue'
+import Validate from './components/Validate.vue'
 
 export default {
   name: 'app',
   components: {
-    Products, Cart, Checkout
+    Products, Cart, Checkout, Validate
   },
 
   data() {
