@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 v-if="true" v-text="mytext">Loading...</h1>
+    <h2 v-else-if="true" v-html="myhtml"/>
     <b-container fluid>
       <div style="margin-top: 3rem"/>
       <Products />
@@ -18,6 +20,15 @@ export default {
   name: 'app',
   components: {
     Products, Cart, Checkout
+  },
+
+  data() {
+    return {
+      // v-text
+      mytext: 'Webshop',
+      // v-html
+      myhtml: '<h1 style="color:Tomato;"> Webshop </br> HTML in <br/></h1>'
+    }
   }
 }
 </script>
