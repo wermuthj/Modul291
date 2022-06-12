@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>Cart</h2>
+    <h2>Warenkorb</h2>
     <table>
       <thead>
       <tr>
         <th>Name</th>
-        <th>Quantity</th>
+        <th>Anzahl</th>
       </tr>
       </thead>
       <tbody>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Checkout</h2>
-    Your total is CHF {{ cartTotal.toFixed(2) }}.
-    <b-button variant="primary" v-show="cartTotal > 0" @click="checkout">Checkout</b-button>
+    <h2>Jetzt bezahlen</h2>
+    Ihr Total ist CHF {{ cartTotal.toFixed(2) }}.
+    <b-button variant="primary" v-show="cartTotal > 0" @click="checkout">Jetzt bezahlen</b-button>
   </div>
 </template>
 
