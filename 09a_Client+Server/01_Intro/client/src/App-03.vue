@@ -16,6 +16,7 @@
 import Products from './components/Products.vue'
 import Cart from './components/Cart.vue'
 import Checkout from './components/Checkout.vue'
+
 export default {
   name: 'app',
   components: {
