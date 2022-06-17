@@ -1,87 +1,71 @@
 <template>
     <div>
         <h2>Jetzt Validieren</h2>
-        <p>
-            <input type="text" placeholder="Vorname" v-model="state.firstname"/>
-            <span v-if="v$.firstname.$error">
-                {{ v$.firstname.$error[0].$message}}
-            </span>
-        </p>
-        <p>
-            <input type="text" placeholder="Nachname" v-model="state.lastname"/>
-            <span v-if="v$.lastname.$error">
-                {{ v$.lastname.$error[0].$message}}
-            </span>
-        </p>
-        <p>
-             <input type="text" placeholder="Adresse" v-model="state.address"/>
-            <span v-if="v$.address.$error">
-                {{ v$.address.$error[0].$message}}
-            </span>
-        </p>
-        <p>
-            <input type="text" placeholder="PLZ" v-model="state.PLZ"/>
-            <span v-if="v$.PLZ.$error">
-                {{ v$.PLZ.$error[0].$message}}
-            </span>
-        </p>
-        <p>
-             <input type="text" placeholder="Ort" v-model="state.Ort"/>
-            <span v-if="v$.Ort.$error">
-                {{ v$.Ort.$error[0].$message}}
-            </span>
-        </p>
+        <form @submit.prevent="submitForm">
+            <div class="form-group">
+                <label> Name</label>
+                <input type="text" v-model="name" class="form-control">
+                <span v-if="!$v.name.required && $v.name.$dirty" class="text-danger"> Name is required!</span>
+                <span v-if="!$v.name.alpha && $v.name.$dirty" class="text-danger"> Name must be alphabetic!</span>
+            </div>
 
-        <button @click="submitForm">Bestellung Abschliessen</button>
+            <div class="form-group">
+                <label> Email</label>
+                <input type="text" v-model="emails" class="form-control">
+                <span v-if="(!$v.emails.required || !$v.emails.email) && $v.emails.$dirty" class="text-danger"> Valid email is required!</span>
+            </div>
+
+            <div class="form-group">
+                <label> Adresse </label>
+                <input type="text" v-model="address" class="form-control">
+                <span v-if="!$v.address.required && $v.address.$dirty" class="text-danger"> Address is required!</span>
+            </div>
+
+            <div class="form-group">
+                <label> Ort </label>
+                <input type="text" v-model="ort" class="form-control">
+                <span v-if="!$v.ort.required && $v.ort.$dirty" class="text-danger"> Ort is required!</span>
+            </div>
+
+            <div class="form-group">
+                <label> PLZ </label>
+                <input type="text" v-model="plz" class="form-control">
+                <span v-if="(!$v.plz.required || !$v.plz.numeric) && $v.plz.$dirty" class="text-danger"> Valid PLZ is required!</span>
+            </div>
+            <input type="submit" class="btn btn-primary mt-2">
+        </form>
     </div>
 </template>
 
 
 <script>
-    import useValidate from "@vuelidate/core";
-    import { required, minLength, numeric } from "@vuelidate/validators";
-    import {mapState} from "vuex";
-    import {reactive} from "@vue/composition-api";
-    import {computed} from "@vue/composition-api";
+    import { required, numeric, alpha, email } from 'vuelidate/lib/validators'
+    import {mapState} from "vuex"
     export default {
         name: 'Validate',
         computed: mapState(['validate']),
 
-        setup() {
-            const state = reactive({
-                firstname: '',
-                lastname: '',
-                address: '',
-                PLZ: '',
-                Ort: '',
-            })
-
-            const rules = computed(() => {
-                return {
-                    firstname: {required, minLenght: minLength(3)},
-                    lastname: {required, minLenght: minLength(5)},
-                    address: {required},
-                    PLZ: {required, numeric},
-                    Ort: {required},
-                }
-            })
-
-            const v$ = useValidate(rules, state)
-            return {
-                state,
-                v$,
-            }
+        data: () => ({
+            name: '',
+            emails: '',
+            address:'',
+            ort:'',
+            plz:'',
+        }),
+        validations: {
+            name: {required, alpha},
+            emails: {required, email},
+            address: {required},
+            ort: {required},
+            plz: {required, numeric}
         },
         methods: {
             submitForm() {
-                this.v$
-                if (!this.v$.$error) {
-                    alert('Bestellung abgeschlossen')
-                }else {
-                    alert('Form failed validation')
-                }
-
-            },
-        },
-    }
+                this.$v.$touch();
+                if(!this.$v.$invalid) {
+                    console.log(`Name: ${this.name}, Email: ${this.emails}, address: ${this.address}, ort: ${this.ort}, plz: ${this.plz} `)
+                };
+            }
+        }
+     }
 </script>

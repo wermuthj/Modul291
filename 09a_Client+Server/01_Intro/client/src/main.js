@@ -5,9 +5,6 @@ Vue.use(VueCompositionAPI);
 import Vuelidate from "vuelidate";
 Vue.use(Vuelidate);
 
-import router from './router'
-
-
 //Demos_03 - Mini webshop (only read products without storing checkout)
 import App from './App-03'
 import store from "./store/03_webshop-1"
