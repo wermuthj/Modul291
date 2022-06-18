@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>Total</h2>
-    Ihr Total ist CHF {{ cartTotal.toFixed(2) }}.
+    Ihr Total beträgt {{ cartTotal.toFixed(2) }} CHF
   </div>
 </template>
 

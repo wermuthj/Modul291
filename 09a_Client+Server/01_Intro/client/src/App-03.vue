@@ -1,16 +1,17 @@
-<template>
-  <div>
+<template >
+  <div style="background-color:#3a3b3c; color:#ebecf0; font-family: Montserrat; text-align: center; padding-top: 50px; padding-bottom:50px">
     <h1 v-if="true" v-text="mytext">Loading...</h1>
     <h2 v-else-if="true" v-html="myhtml"/>
     <b-container fluid>
       <div style="margin-top: 3rem"/>
-      <Products />
+      <Products  />
       <div style="margin-top: 2rem"/>
-      <Cart />
+      <Cart/>
       <div style="margin-top: 2rem"/>
-      <Checkout />
-      <div style="margin-top: 2rem"/>
+      <Checkout/>
+      <div style="margin-top: 2rem" />
       <Validate />
+
     </b-container>
   </div>
 </template>
@@ -29,9 +30,9 @@ export default {
   data() {
     return {
       // v-text
-      mytext: 'Webshop',
+      mytext: 'CAFÉ SCHERMUTH',
       // v-html
-      myhtml: '<h1 style="color:Tomato;"> Webshop </br> HTML in <br/></h1>'
+      myhtml: '<h1 style="color:Tomato;"> CAFÉ SCHERMUTH </br> HTML in <br/></h1>'
     }
   }
 }
